@@ -18,12 +18,11 @@ class BaseModel:
             if 'updated_at' in my_dict:
                 time = datetime.now().isoformat()
                 my_dict['updated_at'] = datetime.fromisoformat(time)
-            if 'id' in my_dict:
-                my_dict['id'] = str(uuid.uuid4())
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.now().isoformat()
-        self.updated_at = datetime.now().isoformat()
-        storage.new(self)
+        else:
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.now().isoformat()
+            self.updated_at = datetime.now().isoformat()
+            storage.new(self)
 
     def to_dict(self):
         """returns a dictionary containing all keys/values
