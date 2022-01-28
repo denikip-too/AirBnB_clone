@@ -16,17 +16,23 @@ class FileStorage:
 
     def new(self, obj):
         """sets in __objects the obj with key <obj class name>.id"""
-        FileStorage.__objects = obj
+        key = "{}.{}".format(type(obj).__name__, obj.id)
+        FileStorage.__objects[key] = obj
 
     def save(self):
         """serializes __objects to the JSON file"""
         with open(FileStorage.__file_path, "w") as f:
-            json.dump(__objects, f)
+            for k, v in FileStorage.__objects.items():
+                d = {k: v.to_dict()}
+            json.dump(d, f)
 
     def reload(self):
         """deserializes the JSON file to __objects"""
         with open(FileStorage.__file_path, "r") as read_file:
-            FileStorage.__objects = json.load(read_file)
+            object_dict = json.load(read_file)
+            object_dict = {k: self.classes()[v["__class__"]](**v)
+                    for k, v in obj_dict.items()}
+            FileStorage.__objects = object_dict
 
     def classes(self):
         """imports classes from other directories and returns a dictionary"""
