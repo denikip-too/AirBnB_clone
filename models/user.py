@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""inherits BaseModel"""
+"""import BaseModel"""
+from models.base_model import BaseModel
+from models.engine.file_storage import FileStorage
 
 
 class User:
