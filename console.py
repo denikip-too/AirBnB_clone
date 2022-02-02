@@ -26,7 +26,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, arg):
         """Creates a new instance of BaseModel, saves it and prints the id"""
-        if arg == None or arg == "":
+        if arg is None or arg == "":
             print("** class name missing **")
         elif arg not in storage.classes():
             print("** class doesn't exist **")
@@ -35,10 +35,10 @@ class HBNBCommand(cmd.Cmd):
             base.save()
             print(base.id)
 
-    def do_show(self,arg):
+    def do_show(self, arg):
         """ Prints the string representation of an instance
         based on the class name and id"""
-        if arg == None or arg == "":
+        if arg is None or arg == "":
             print("** class name missing **")
         else:
             words = arg.split(' ')
@@ -55,7 +55,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, arg):
         """Deletes an instance based on the class name and id"""
-        if arg == None or arg == "":
+        if arg is None or arg == "":
             print("** class name missing **")
         else:
             words = arg.split(' ')
@@ -76,23 +76,24 @@ class HBNBCommand(cmd.Cmd):
         or not on the class name"""
         if arg not in storage.classes():
             print("** class doesn't exist **")
-        if arg == None or arg == "":
-            l = [str(obj) for key, obj in storage.all().items()]
-            print(l)
+        if arg is None or arg == "":
+            lst = [str(obj) for key, obj in storage.all().items()]
+            print(lst)
         else:
             words = arg.split(' ')
             if words[0] not in storage.classes():
                 print("** class doesn't exist **")
             else:
-                l = [str(obj) for key, obj in storage.all().items()
+                lst = [str(obj) for key, obj in storage.all().items()
                      if type(obj).__name__ == words[0]]
-                print(l)
+                print(lst)
 
     def do_update(self, arg):
         """Updates an instance based on the class name
         and id by adding or updating attribute"""
-        if arg == None or arg == "":
+        if arg is None or arg == "":
             print("** class name missing **")
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
