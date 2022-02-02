@@ -16,8 +16,6 @@ class BaseModel:
                 my_dict['created_at'] = datetime.now()
             if 'updated_at' in my_dict:
                 my_dict['updated_at'] = datetime.now()
-            if 'id' in my_dict:
-                my_dict['id'] = str(uuid.uuid4())
             else:
                 for key in kwargs:
                     self.__dict__[key] = kwargs[key]
