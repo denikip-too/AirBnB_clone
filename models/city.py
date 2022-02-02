@@ -6,5 +6,5 @@ from models.base_model import BaseModel
 class City(BaseModel):
     """Public class attribute"""
 
-    state_id= ""
+    state_id = ""
     name = ""
