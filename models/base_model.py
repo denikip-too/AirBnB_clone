@@ -19,11 +19,10 @@ class BaseModel:
             else:
                 for key in kwargs:
                     self.__dict__[key] = kwargs[key]
-        else:
-            self.id = str(uuid.uuid4())
-            self.created_at = datetime.now()
-            self.updated_at = datetime.now()
-            storage.new(self)
+        self.id = str(uuid.uuid4())
+        self.created_at = datetime.now()
+        self.updated_at = datetime.now()
+        storage.new(self)
 
     def to_dict(self):
         """returns a dictionary containing all keys/values
