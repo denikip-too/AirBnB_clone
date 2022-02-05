@@ -85,7 +85,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** class doesn't exist **")
             else:
                 lst = [str(obj) for key, obj in storage.all().items()
-                     if type(obj).__name__ == words[0]]
+                        if type(obj).__name__ == words[0]]
                 print(lst)
 
     def do_update(self, arg):
@@ -93,6 +93,7 @@ class HBNBCommand(cmd.Cmd):
         and id by adding or updating attribute"""
         if arg is None or arg == "":
             print("** class name missing **")
+            return
 
 
 if __name__ == '__main__':
