@@ -21,6 +21,8 @@ button {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	margin-right: 30px;
+	margin-left: auto;
 }
 button:hover {
 	opacity: 90%;
