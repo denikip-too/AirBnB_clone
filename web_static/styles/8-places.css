@@ -41,3 +41,21 @@
 	min-width: 60px;
 	height: 60px;
 }
+.information {
+	height: 80px;
+	width: 100px;
+	border-top: #DDDDDD 1px solid;
+	border-bottom: #DDDDDD 1px solid;
+}
+.max_guest {
+	background-image: url("../images/icon_group.png");
+	width: 100px;
+}
+.number_rooms {
+	background-image: url("../images/icon_bed.png");
+	width: 100px;
+}
+.number_bathrooms {
+	background-image: url("../images/icon_bath.png");
+	width: 100px;
+}
