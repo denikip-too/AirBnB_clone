@@ -9,7 +9,7 @@
 }
 .places article {
 	background-color: white;
-	height: 400px;
+	height: 700px;
 	border: 1px solid #FF5A5F;
 	border-radius: 4px;
 	display: flex;
@@ -73,4 +73,34 @@
 	display: block;
         margin-left: auto;
         margin-right: auto;
+}
+.place .amenities {
+	margin-top: 40px;
+	width: 390px;
+	text-align: left;
+}
+.places .amenities h2 {
+	font-size: 16px;
+	border-bottom: #DDDDDD 1px solid;
+	text-align: left;
+	width: 360px;
+}
+ul {
+	list-style-type: none;
+}
+.reviews {
+	margin-top: 40px;
+	width: 390px;
+}
+.reviews h2 {
+	font-size: 16px;
+	border-bottom: #DDDDDD 1px solid;
+	text-align: left;
+	width: 360px;
+}
+.reviews h3 {
+	font-size: 14px;
+}
+.reviews p {
+	font-size: 12px;
 }
